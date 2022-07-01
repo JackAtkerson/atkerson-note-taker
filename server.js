@@ -23,6 +23,6 @@ app.get('/api/notes', (req, res) => {
     res.json(results);
 });
 
-app.listen(3001, () => {
+app.listen(PORT, () => {
     console.log`API Server now on port ${PORT}!`;
 });
