@@ -11,6 +11,8 @@ This is a note taking application. The simlpicity of the application opens up th
 - [Questions](#questions)
 
 ## Demonstration
+![Example Image 1](./public/assets/images/note-taker-ex1.jpeg)
+![Example Image 2](./public/assets/images/note-taker-ex2.jpeg)
 ![Demonstration video](./public/assets/images/note-taker-demo.gif)
 
 ## Installation
