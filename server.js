@@ -30,7 +30,7 @@ app.delete('/api/notes:id', (req, res) => {
         const newNotes = notes.filter(note => note.id !== parseInt(req.params.id));
     
     fs.writeFile('./db/db.json', JSON.stringify(newNotes), (err, data) => {
-        res.json({msg: 'successfully'});
+        res.json({msg: 'successful'});
     });
     });
 });
