@@ -11,7 +11,7 @@ This is a note taking application. The simlpicity of the application opens up th
 - [Questions](#questions)
 
 ## Demonstration
-![Demonstration video](./public/assets/videos/note-taker-demo.gif)
+![Demonstration video](./public/assets/images/note-taker-demo.gif)
 
 ## Installation
 To install this application, go to https://github.com/JackAtkerson/atkerson-note-taker and clone the repository to your local work environment. Install npm by entering "npm init" in your command line. After npm is installed, install express with the command "npm i express".
