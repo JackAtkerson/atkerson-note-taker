@@ -8,11 +8,11 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static('punlic'));
+app.use(express.static('public'));
 app.use(express.json());
 
 app.post('/api/notes', (req, res) => {
-    fs.readFile('./db/dc.json', 'utf8', (err, data) => {
+    fs.readFile('./db/db.json', 'utf8', (err, data) => {
         if (err) throw err;
         var notes = JSON.parse(data);
         let userNote = req.body;
@@ -48,49 +48,13 @@ app.get('/api/notes', (req, res) => {
 });
 
 app.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, '/notes.html'))
+    res.sendFile(path.join(__dirname, './public/notes.html'))
 });
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '/index.html'));
-});
-/*function filterByQuery(query, notesArray) {
-    let filteredResults = notesArray;
-    if (query.title) {
-        filteredResults = filteredResults.filter(note => note.title === query.title);
-    }
-    if (query.text) {
-        filteredResults = filteredResults.filter(note => note.text === query.text);
-    }
-    return filteredResults;
-};
-
-function createNewNote(body, notesArray) {
-    const note = body;
-    notesArray.push(note);
-    fs.writeFileSync(
-        path.join(__dirname, './db/db.json'),
-        JSON.stringify({ notes: notesArray }, null, 2)
-    );
-    return note;
-}
-
-app.get('/api/notes', (req, res) => {
-    let results = notes;
-    if (req.query) {
-        results = filterByQuery(req.query, results);
-    }
-    res.json(results);
+    res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
-app.post('/api/notes', (req, res) => {
-    req.body.id = notes.length.toString();
-
-    const note = createNewNote(req.body, notes);
-
-    res.json(note);
-});
-*/
 app.listen(PORT, () => {
     console.log`API Server now on port ${PORT}!`;
 });
